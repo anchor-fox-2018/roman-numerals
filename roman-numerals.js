@@ -2,6 +2,7 @@ function toRoman(angka){
     var angkaString = String(angka);
     var arrayAngka = angkaString.split('');
     var hasil = '';
+    //console.log(arrayAngka)
     //ANGKA SATUAN
     if(arrayAngka.length == 1){
         //console.log('ayam')
@@ -11,7 +12,7 @@ function toRoman(angka){
            }
         }else if(Number(arrayAngka) === 5){
            hasil+= 'V';
-        }else if(Number(arrayAngka) > 3 && Number(arrayAngka) < 9){
+        }else if(Number(arrayAngka) > 5 && Number(arrayAngka) < 9){
             hasil+= 'V'
             for(var i = 5;i < Number(arrayAngka);i++){
                 hasil+= 'I';
@@ -34,7 +35,7 @@ function toRoman(angka){
            }
         }else if(Number(arrayAngka[0]) === 5){
             hasil+= 'L';
-        }else if(Number(arrayAngka[0]) > 3 && Number(arrayAngka[0]) < 9){
+        }else if(Number(arrayAngka[0]) > 5 && Number(arrayAngka[0]) < 9){
             hasil+= 'L'
             for(var i = 5;i < Number(arrayAngka);i++){
                 hasil+= 'X';
@@ -51,20 +52,20 @@ function toRoman(angka){
             for(var i = 0;i < Number(arrayAngka[1]);i++){
                 hasil+= 'I';
             }
-            }else if(Number(arrayAngka[1]) === 5){
-                hasil+= 'V';
-            }else if(Number(arrayAngka) > 3 && Number(arrayAngka) < 9){
-                hasil+= 'V'
-                for(var i = 5;i < Number(arrayAngka);i++){
-                    hasil+= 'I';
-                    }
-            }else{
-                if(Number(arrayAngka[1]) === 4){
-                hasil+= 'IV'
+        }else if(Number(arrayAngka[1]) === 5){
+            hasil+= 'V';
+        }else if(Number(arrayAngka) > 5 && Number(arrayAngka) < 9){
+            hasil+= 'V'
+            for(var i = 5;i < Number(arrayAngka);i++){
+                hasil+= 'I';
                 }
-                if(Number(arrayAngka[1]) === 9){
-                hasil+= 'IX'
-                }
+        }else{
+            if(Number(arrayAngka[1]) === 4){
+            hasil+= 'IV'
+            }
+            if(Number(arrayAngka[1]) === 9){
+            hasil+= 'IX'
+            }
             } 
     }
     //ANGKA RATUSAN
@@ -76,7 +77,7 @@ function toRoman(angka){
            }
         }else if(Number(arrayAngka[0]) === 5){
         hasil+= 'D';
-        }else if(Number(arrayAngka[0]) > 3 && Number(arrayAngka) < 9){
+        }else if(Number(arrayAngka[0]) > 5 && Number(arrayAngka) < 9){
             hasil+= 'D'
             for(var i = 5;i < Number(arrayAngka[0]);i++){
                 hasil+= 'C';
@@ -95,7 +96,7 @@ function toRoman(angka){
                 }
         }else if(Number(arrayAngka[1]) === 5){
             hasil+= 'L';
-        }else if(Number(arrayAngka[1]) > 3 && Number(arrayAngka) < 9){
+        }else if(Number(arrayAngka[1]) > 5 && Number(arrayAngka) < 9){
             hasil+= 'L'
             for(var i = 5;i < Number(arrayAngka[1]);i++){
                 hasil+= 'X';
@@ -114,7 +115,7 @@ function toRoman(angka){
                 }
         }else if(Number(arrayAngka[2]) === 5){
             hasil+= 'V';
-        }else if(Number(arrayAngka[2]) > 3 && Number(arrayAngka[2]) < 9){
+        }else if(Number(arrayAngka[2]) > 5 && Number(arrayAngka[2]) < 9){
             hasil+= 'V'
             for(var i = 5;i < Number(arrayAngka);i++){
                 hasil+= 'I';
@@ -179,7 +180,7 @@ function toRoman(angka){
                 }
         }else if(Number(arrayAngka[3]) === 5){
             hasil+= 'V';
-        }else if(Number(arrayAngka[3]) > 3 && Number(arrayAngka[3]) < 9){
+        }else if(Number(arrayAngka[3]) > 5 && Number(arrayAngka[3]) < 9){
             hasil+= 'V'
             for(var i = 5;i < Number(arrayAngka[3]);i++){
                 hasil+= 'I';
@@ -206,3 +207,11 @@ function toRoman(angka){
     // }
     return hasil
 }
+console.log('My Totally sweet testing script\n');
+console.log('Input | expected | actual');
+console.log('______|__________|________')
+console.log('4     | IV       |',toRoman(4));
+console.log('9     | IX       |',toRoman(9));
+console.log('23    | XXIII    |',toRoman(23));
+console.log('1453  | MCDLIII  |',toRoman(1453));
+console.log('1646  | MCDXLVI  |',toRoman(1646));
